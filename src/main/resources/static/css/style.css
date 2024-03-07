@@ -1,0 +1,58 @@
+.background {
+    background-color: orange;
+
+}
+
+.label {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+
+
+}
+
+.radius {
+    background-color: navy;
+    width: 150px;
+    height: 20px;
+    padding-left: 10px;
+    padding: 10px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 15px;
+    text-align: center;
+
+}
+
+#conteinter {
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.span {
+    font-size: 16px;
+}
+
+.write {
+    color: darkcyan;
+    font-size: 30px;
+}
+
+.line {
+
+    font-size: 30px;
+    color: white;
+
+}

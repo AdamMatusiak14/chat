@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="001-testdata-1" author="ad">
+        <insert tableName="user_tab">
+            <column name="nick" value="Paweł" />
+            <column name="password"
+                value="$2a$12$/FzHSUn.iaYeyPmaLOxPte4Tu/gDQosJh7u9QYFtHJc7Kz4NghYue" /> <!-- paw -->
+        </insert>
+
+        <insert tableName="user_tab">
+            <column name="nick" value="Gaja" />
+            <column name="password"
+                value="$2a$12$.MQugQCBk5HsT4D7D4E6YuNHe/x8pwnlLcw.cOg6Eu4zbcB.bMgaK" /> <!-- gaj -->
+        </insert>
+
+        <insert tableName="user_tab">
+            <column name="nick" value="Adam" />
+            <column name="password"
+                value="$2a$12$Hs2tP53mLqV9mPfl2O1pU.jRyWSxZ2GA3BKoiiPJszYUvuLteFl12" /> <!--ada--> <!-- tu hasło
+            jest na bcrypt-->
+        </insert>
+
+
+    </changeSet>
+</databaseChangeLog>
