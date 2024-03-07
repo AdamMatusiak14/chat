@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+
+<body class="background">
+    <form action="/addUser" method="post" th:object="${user}">
+        <label class="label">Nick:<input type="text" th:field="*{nick}"></label><br>
+        <label class="label">Password: <input type="text" th:field=*{password} /></label>
+        <button class="button" type="submit">Save</button>
+    </form>
+
+</body>
+
+</html>
