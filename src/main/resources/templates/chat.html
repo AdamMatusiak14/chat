@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
+</head>
+
+<body class="conteiner">
+    <form method="post" action="checkUser" th:object="${userDto}" />
+    User1: <input type="text" th:field="${userDto.us1.nick}" /> <br>
+    User2:<input type="text" th:field="${userDto.us2.nick}" /> <br>
+    <button type="submit">Check</button>
+    </form>
+
+</body>
+
+</html>

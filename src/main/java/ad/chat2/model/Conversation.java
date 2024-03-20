@@ -34,4 +34,9 @@ public class Conversation {
     @OneToMany(mappedBy = "conversation", cascade = CascadeType.ALL)
     private List<Message> messages;
 
+    public Conversation(User us1, User us2) {
+        this.us1 = us1;
+        this.us2 = us2;
+    }
+
 }
