@@ -4,11 +4,39 @@
 
 <head>
     <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+
+
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 
 <body>
-    Tu będzie okno chatu
+
+    <div>
+        <label th:text="${conversation.us1.nick}"></label>
+    </div>
+
+    <form id="messageForm1">
+        <input type="text" id="messageInputUser1" placeholder="Type your message here" />
+        <button type="submit">Send</button>
+    </form>
+
+
+    <div>
+        <label th:text="${conversation.us2.nick}"></label>
+    </div>
+
+    <form id="messageForm2">
+        <input type="text" id="messageInputUser2" placeholder="Type your message here" />
+        <button type="submit">Send</button>
+    </form>
+
+
+
+
+    <script src="..\static\js\main.js" th:src="@{/js/main.js}"></script>
 </body>
 
 </html>

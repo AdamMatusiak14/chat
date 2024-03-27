@@ -43,9 +43,17 @@ public class UserController {
     public String checkUser(DtoUsers userDto, Model model) {
         User use1 = userService.findUserByName(userDto.getUs1().getNick());
         User use2 = userService.findUserByName(userDto.getUs2().getNick());
+        if (use1 == null) {
+            System.out.println("Użytkowanika user1 nie ma w bazie danych");
+            return "redirect:chat";
+        }
+        if (use2 == null) {
+            System.out.println("Użytkowanika user2 nie ma w bazie danych");
+            return "redirect:chat";
+        }
         Conversation conversation = new Conversation(use1, use2);
         userService.saveUserInConversation(conversation);
-
+        model.addAttribute("conversation", conversation);
         return "/chatWindow";
 
     }
