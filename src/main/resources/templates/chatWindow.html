@@ -20,6 +20,8 @@
 
     <form id="messageForm1">
         <input type="text" id="messageInputUser1" placeholder="Type your message here" />
+        <input type="hidden" th:value="${conversation.us1.nick}" name="nick" />
+        <input type="hidden" th:value="${conversation.id}" name="idConversation" />
         <button type="submit">Send</button>
     </form>
 
@@ -30,6 +32,8 @@
 
     <form id="messageForm2">
         <input type="text" id="messageInputUser2" placeholder="Type your message here" />
+        <input type="hidden" th:value="${conversation.us2.nick}" name="nick2" />
+        <input type="hidden" th:value="${conversation.id}" name="idConversation2" />
         <button type="submit">Send</button>
     </form>
 

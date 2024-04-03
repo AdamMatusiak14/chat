@@ -11,8 +11,8 @@
             </column>
             <column name="content" type="VARCHAR(100)" />
             <column name="date" type="DATETIME" />
-            <column name="sender" type="BIGINT" />
-            <column name="conversation" type="BIGINT" />
+            <column name="user_id" type="BIGINT" />
+            <column name="conversation_id" type="BIGINT" />
 
 
         </createTable>

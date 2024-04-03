@@ -9,4 +9,5 @@ import ad.chat2.model.User;
 public interface UserRepositories extends JpaRepository<User, Long> {
 
     Optional<User> findUserByNick(String name);
+
 }

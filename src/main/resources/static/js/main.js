@@ -15,8 +15,12 @@ stompClient.connect({}, function (frame) {
 
 function sendMessage1() {
     var messageInput = document.getElementById('messageInputUser1');
+    var nick = document.getElementsByName('nick')[0];
+    var idConversation = document.getElementsByName('idConversation')[0];
     var messageDto = {
         message: messageInput.value,
+        nick: nick.value,
+        idConversation: idConversation.value,
 
     }
 
@@ -26,9 +30,15 @@ function sendMessage1() {
 
 function sendMessage2() {
     var messageInput = document.getElementById('messageInputUser2');
+    var nick = document.getElementsByName('nick2')[0];
+    var idConversation = document.getElementsByName('idConversation2')[0];
     var messageDto = {
         message: messageInput.value,
+        nick: nick.value,
+        idConversation: idConversation.value,
     }
+
+
     stompClient.send("/app/sendMessage", {}, JSON.stringify(messageDto)); messageInput.value = '';
 
 }
