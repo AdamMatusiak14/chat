@@ -7,8 +7,8 @@ var stompClient = Stomp.over(socket);
 
 stompClient.connect({}, function (frame) {
     console.log('Connect:' + frame);
-    stompClient.subscribe('/topic/ws', function (message) {
-        showMessage(JSON.parse(message.body));
+    stompClient.subscribe('/topic/ws', function (messageDto) {
+        showMessage(JSON.parse(messageDto.body));
     })
 });
 
@@ -52,5 +52,15 @@ document.getElementById('messageForm2').addEventListener('submit', function (eve
     event.preventDefault();
     sendMessage2();
 });
+
+
+function showMessage(messageDto) {
+    var chat = document.getElementById('chat');
+    var messageElement = document.createElement('div');
+    messageElement.innerHTML = '<strong>' + messageDto.nick + '</strong>:' + messageDto.message;
+    chat.appendChild(messageElement);
+
+
+}
 
 

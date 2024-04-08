@@ -12,17 +12,17 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 
-<body>
+<body class="background">
 
     <div>
         <label th:text="${conversation.us1.nick}"></label>
     </div>
 
     <form id="messageForm1">
-        <input type="text" id="messageInputUser1" placeholder="Type your message here" />
+        <label class="label"> <input type="text" id="messageInputUser1" placeholder="Type your message here" /> </label>
         <input type="hidden" th:value="${conversation.us1.nick}" name="nick" />
         <input type="hidden" th:value="${conversation.id}" name="idConversation" />
-        <button type="submit">Send</button>
+        <button class="button" type="submit">Send</button>
     </form>
 
 
@@ -31,13 +31,13 @@
     </div>
 
     <form id="messageForm2">
-        <input type="text" id="messageInputUser2" placeholder="Type your message here" />
+        <label class="label"> <input type="text" id="messageInputUser2" placeholder="Type your message here" /> </label>
         <input type="hidden" th:value="${conversation.us2.nick}" name="nick2" />
         <input type="hidden" th:value="${conversation.id}" name="idConversation2" />
-        <button type="submit">Send</button>
+        <button class="button" type="submit">Send</button>
     </form>
 
-
+    <div id="chat"></div>
 
 
     <script src="..\static\js\main.js" th:src="@{/js/main.js}"></script>

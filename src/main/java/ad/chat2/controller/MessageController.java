@@ -26,7 +26,7 @@ public class MessageController {
 
     @MessageMapping("/sendMessage")
     @SendTo("/topic/ws")
-    public void sendMessage(MessageDto messageDto) {
+    public MessageDto sendMessage(MessageDto messageDto) {
 
         String messageContent = messageDto.getMessage();
         String messageSender = messageDto.getNick();
@@ -46,6 +46,8 @@ public class MessageController {
         message.setConversation(conversation);
 
         messageRepositories.save(message);
+
+        return messageDto;
 
     }
 
