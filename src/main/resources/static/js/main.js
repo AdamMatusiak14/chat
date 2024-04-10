@@ -43,6 +43,8 @@ function sendMessage2() {
 
 }
 
+
+
 document.getElementById('messageForm1').addEventListener('submit', function (event) {
     event.preventDefault();
     sendMessage1();
@@ -52,6 +54,7 @@ document.getElementById('messageForm2').addEventListener('submit', function (eve
     event.preventDefault();
     sendMessage2();
 });
+
 
 
 function showMessage(messageDto) {
