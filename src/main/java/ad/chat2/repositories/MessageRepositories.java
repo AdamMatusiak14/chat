@@ -1,5 +1,6 @@
 package ad.chat2.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +11,7 @@ import ad.chat2.model.User;
 
 @Repository
 public interface MessageRepositories extends JpaRepository<Message, Long> {
+
+    List<Message> findMessegesByConversationId(Long id);
 
 }

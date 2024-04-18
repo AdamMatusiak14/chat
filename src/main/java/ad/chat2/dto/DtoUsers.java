@@ -11,6 +11,17 @@ public class DtoUsers {
     public DtoUsers() {
     }
 
+    public DtoUsers(Long id, User us1, User us2) {
+        this.id = id;
+        this.us1 = us1;
+        this.us2 = us2;
+    }
+
+    public DtoUsers(User us1, User us2) {
+        this.us1 = us1;
+        this.us2 = us2;
+    }
+
     public Long getId() {
         return this.id;
     }

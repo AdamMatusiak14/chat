@@ -9,13 +9,16 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 
-<body>
+<body class="background">
 
     <h1> Whose conversation you want to see </h1>
     <form action="/findConversation" method="post" th:object="${convertDto}">
-        First person: <input type="text" th:field="${convertDto.firstName}" />
-        Second person: <input type="text" th:field="${convertDto.secondName}" />
-        <button type="submit">Find</button>
+
+        <label class="label"> First person: <input type="text" th:field="${convertDto.firstName}" /> </label><br>
+
+        <label class="label"> Second person: <input type="text" th:field="${convertDto.secondName}" /> </label>
+
+        <button class="button" type="submit">Find</button>
     </form>
 
 </body>

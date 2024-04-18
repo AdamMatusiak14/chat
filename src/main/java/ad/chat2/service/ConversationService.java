@@ -1,10 +1,12 @@
 package ad.chat2.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import ad.chat2.model.Conversation;
+import ad.chat2.model.Message;
 import ad.chat2.model.User;
 import ad.chat2.repositories.ConversationRepository;
 import ad.chat2.repositories.MessageRepositories;
@@ -16,10 +18,13 @@ public class ConversationService {
 
     private ConversationRepository conversationRepository;
     private UserRepositories userRepositories;
+    private MessageRepositories messageRepositories;
 
-    public ConversationService(ConversationRepository conversationRepository, UserRepositories userRepositories) {
+    public ConversationService(ConversationRepository conversationRepository, UserRepositories userRepositories,
+            MessageRepositories messageRepositories) {
         this.conversationRepository = conversationRepository;
         this.userRepositories = userRepositories;
+        this.messageRepositories = messageRepositories;
     }
 
     public User findUser(String name) {
@@ -41,5 +46,12 @@ public class ConversationService {
             throw new EntityNotFoundException("Nie znaleziono encji conversation");
         }
 
+    }
+
+    public List<Message> findMessage(Long id) {
+
+        List<Message> messages = messageRepositories.findMessegesByConversationId(id);
+
+        return messages;
     }
 }

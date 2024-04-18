@@ -8,9 +8,12 @@
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 
-<body>
+<body class="background">
 
-    <!-- tu dajesz pętle for-echa i dane uzytkownikow i tyle-->
+    <ul>
+        <li th:each="message:${messages}" th:text="${message.sender.nick +': '+ message.content}">
+        </li>
+    </ul>
 
 </body>
 

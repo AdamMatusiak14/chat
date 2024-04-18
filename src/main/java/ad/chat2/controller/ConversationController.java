@@ -1,5 +1,7 @@
 package ad.chat2.controller;
 
+import java.util.List;
+
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import ad.chat2.dto.DtoConversation;
 import ad.chat2.model.Conversation;
+import ad.chat2.model.Message;
 import ad.chat2.model.User;
 import ad.chat2.repositories.ConversationRepository;
 import ad.chat2.service.ConversationService;
@@ -36,7 +39,11 @@ public class ConversationController {
 
         Conversation conversation = conversationService.findConversation(user1, user2);
 
-        model.addAttribute("conversation", conversation);
+        Long id = conversation.getId();
+
+        List<Message> messages = conversationService.findMessage(id);
+
+        model.addAttribute("messages", messages);
 
         return "/viewConversation";
 
