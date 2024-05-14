@@ -62,7 +62,6 @@ public class UserServiceTest {
     @Test
     public void testFindUserByName_NotFound() {
         String name = "non_existent_user";
-        User user = new User();
 
         when(userRepositories.findUserByNick(name)).thenReturn(Optional.empty());
 

@@ -32,7 +32,7 @@ public class ConversationService {
         if (userName.isPresent()) {
             return userName.get();
         } else {
-            throw new EntityNotFoundException("Nie znaleziono encji o indentyfikatorze" + name);
+            throw new EntityNotFoundException("Nie znaleziono encji o identyfikatorze" + name);
 
         }
     }

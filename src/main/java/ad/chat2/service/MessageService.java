@@ -33,7 +33,7 @@ public class MessageService {
         if (sender.isPresent()) {
             return sender.get();
         } else {
-            throw new EntityNotFoundException("Nie znaleziono encji o indentyfikatorze" + nick);
+            throw new EntityNotFoundException("Nie znaleziono encji o identyfikatorze " + nick);
         }
     }
 
@@ -42,7 +42,7 @@ public class MessageService {
         if (conversation.isPresent()) {
             return conversation.get();
         } else {
-            throw new EntityNotFoundException("Nie znaleziono encji o identyfikatorze" + id);
+            throw new EntityNotFoundException("Nie znaleziono encji o identyfikatorze " + id);
         }
     }
 
